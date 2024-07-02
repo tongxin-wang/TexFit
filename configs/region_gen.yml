@@ -1,0 +1,38 @@
+name: region_gen
+use_tb_logger: true
+debug_path: False
+set_CUDA_VISIBLE_DEVICES: True
+gpu_ids: [0]
+
+# dataset configs
+batch_size: 8
+num_workers: 4
+mask_dir: /path/to/DFMM-Spotlight/mask
+train_img_dir: /path/to/DFMM-Spotlight/train_images
+test_img_dir: /path/to/DFMM-Spotlight/test_images
+train_ann_file: /path/to/DFMM-Spotlight/mask_ann/train_ann_file.jsonl
+test_ann_file: /path/to/DFMM-Spotlight/mask_ann/test_ann_file.jsonl
+downsample_factor: 2
+
+model_type: ERLM
+text_embedding_dim: 512
+encoder_in_channels: 3
+fc_in_channels: 64
+fc_in_index: 4
+fc_channels: 64
+fc_num_convs: 1
+fc_concat_input: False
+fc_dropout_ratio: 0.1
+fc_num_classes: 2
+fc_align_corners: False
+
+# training configs
+val_freq: 5
+print_freq: 100
+weight_decay: 0
+manual_seed: 2023
+num_epochs: 100
+lr: !!float 1e-4
+lr_decay: step
+gamma: 0.1
+step: 50

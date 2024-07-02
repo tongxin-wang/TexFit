@@ -1,0 +1,8 @@
+__pycache__/
+.cache/
+experiments/*
+tb_logger/*
+sd-model-finetuned/*
+*.png
+*.txt
+*.pth
