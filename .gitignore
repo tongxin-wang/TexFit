@@ -3,6 +3,4 @@ __pycache__/
 experiments/*
 tb_logger/*
 sd-model-finetuned/*
-*.png
-*.txt
 *.pth
