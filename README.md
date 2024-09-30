@@ -50,9 +50,9 @@ DFMM-Spotlight
 
 ### Training and Inference
 
-**___Important note: Replace all the `/path/to` paths in the code and configuration files with real paths.___**
-
-**___`/path/to` paths exist in all the configuration files under the folder `configs` and `dataset/dfmm_spotlight_hf/dfmm_spotlight_hf.py`.___**
+> [!IMPORTANT]
+> Replace all the `/path/to` paths in the code and configuration files with real paths.
+> `/path/to` paths exist in all the configuration files under the folder `configs` and `dataset/dfmm_spotlight_hf/dfmm_spotlight_hf.py`.
 
 #### Train the ERLM (Stage I)
 
@@ -72,7 +72,7 @@ bash train_texfit.sh
 
 #### Local Fashion Image Editing
 
-Once the ERLM and Texfit are trained, you can edit a fashion image locally by running the following command:
+Once the ERLM and TexFit are trained, you can edit a fashion image locally by running the following command:
 
 ```shell
 CUDA_VISIBLE_DEVICES=0 python pipeline.py \
@@ -92,9 +92,13 @@ CUDA_VISIBLE_DEVICES=0 python pipeline.py \
   --img_path examples/MEN-Denim-id_00000089-03_7_additional.png \
   --output_path ./example_output.png \
   --text_prompt 'denim blue lower clothing'  \
-  --erlm_model_path experiments/region_gen/models/region_generation_epoch55.pth \
+  --erlm_model_path experiments/region_gen/models/region_generation_epoch60.pth \
   --texfit_model_path sd-model-finetuned/texfit-model
 ```
+
+### Pre-trained Models
+
+You can download the pre-trained ERLM and TexFit model from [Google Drive](https://drive.google.com/drive/folders/1-bMjvtbY3X3TGoQXCjw3Bt9-Jv_lJomK?usp=sharing).
 
 ### Citation
 
